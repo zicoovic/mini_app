@@ -15,57 +15,53 @@ class _CategoriesSectionState extends State<CategoriesSection> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsetsDirectional.only(start: 32.w),
-      child: SizedBox(
-        height: 40.h,
-        child: ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          padding: EdgeInsets.zero,
-          scrollDirection: Axis.horizontal,
-          itemCount: widget.categories.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      selectedIndex = index;
-                    });
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 8.h,
-                    ),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: AppColors.brandBlue,
-                        width: 1.w,
-                      ),
-                      borderRadius: BorderRadius.circular(20.r),
-                      color: index == selectedIndex
-                          ? AppColors.darkBlue
-                          : Colors.white,
-                    ),
-                    child: Center(
-                      child: Text(
-                        widget.categories[index],
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          color: AppColors.darkBlue,
-                        ),
+    return SizedBox(
+      height: 40.h,
+      child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
+        padding: EdgeInsets.zero,
+        scrollDirection: Axis.horizontal,
+        itemCount: widget.categories.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    selectedIndex = index;
+                  });
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 8.h,
+                  ),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: AppColors.grey, width: 1.w),
+                    borderRadius: BorderRadius.circular(20.r),
+                    color: index == selectedIndex
+                        ? AppColors.primaryBlue
+                        : AppColors.whiteBackground,
+                  ),
+                  child: Center(
+                    child: Text(
+                      widget.categories[index],
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                        color: index == selectedIndex
+                            ? AppColors.whiteBackground
+                            : AppColors.primaryBlue,
                       ),
                     ),
                   ),
                 ),
-                SizedBox(width: 4.w),
-              ],
-            );
-          },
-        ),
+              ),
+              SizedBox(width: 4.w),
+            ],
+          );
+        },
       ),
     );
   }
