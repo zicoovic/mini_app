@@ -15,7 +15,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(bottom: 35.h),
-      height: 70.h,
+      height: 100.h,
       decoration: BoxDecoration(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(25.r),
@@ -39,7 +39,7 @@ class _CustomNavBarState extends State<CustomNavBar> {
     return GestureDetector(
       onTap: () => setState(() => _currentIndex = index),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.h, vertical: 8.w),
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
         decoration: BoxDecoration(
           color: isSelected ? AppColors.primaryBlue : Colors.transparent,
           borderRadius: BorderRadius.circular(20.r),
@@ -47,16 +47,13 @@ class _CustomNavBarState extends State<CustomNavBar> {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              icon,
-              color: isSelected ? AppColors.whiteBackground : AppColors.grey,
-            ),
+            Icon(icon, color: isSelected ? AppColors.offWhite : AppColors.grey),
             if (isSelected) ...[
               SizedBox(width: 8.w),
               Text(
                 label,
                 style: TextStyle(
-                  color: AppColors.whiteBackground,
+                  color: AppColors.offWhite,
                   fontWeight: FontWeight.bold,
                 ),
               ),

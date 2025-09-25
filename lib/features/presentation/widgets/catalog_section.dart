@@ -16,7 +16,7 @@ class _CategoriesSectionState extends State<CategoriesSection> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 40.h,
+      height: 28.h,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.zero,
@@ -33,25 +33,22 @@ class _CategoriesSectionState extends State<CategoriesSection> {
                   });
                 },
                 child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 8.h,
-                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
                   decoration: BoxDecoration(
                     border: Border.all(color: AppColors.grey, width: 1.w),
                     borderRadius: BorderRadius.circular(20.r),
                     color: index == selectedIndex
                         ? AppColors.primaryBlue
-                        : AppColors.whiteBackground,
+                        : Colors.white,
                   ),
                   child: Center(
                     child: Text(
                       widget.categories[index],
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         color: index == selectedIndex
-                            ? AppColors.whiteBackground
+                            ? AppColors.offWhite
                             : AppColors.primaryBlue,
                       ),
                     ),

@@ -16,7 +16,7 @@ class AppConstants {
 
   static List<String> categories = [
     "All",
-    "Action",
+    "Popular",
     "Trending",
     "New Release",
     "Top Rated",

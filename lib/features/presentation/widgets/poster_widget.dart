@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mini_app/core/helper/app_colors.dart';
 import 'package:mini_app/core/helper/app_constants.dart';
+import 'package:mini_app/features/presentation/screens/details_screen.dart';
 
 class PosterWidget extends StatelessWidget {
   const PosterWidget({super.key});
@@ -18,20 +19,31 @@ class PosterWidget extends StatelessWidget {
         itemBuilder: (context, index) => Padding(
           padding: EdgeInsets.only(right: 16.w),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Stack(
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: AppColors.light,
-                      borderRadius: BorderRadius.all(Radius.circular(16.r)),
-                      image: DecorationImage(
-                        image: AssetImage(AppConstants.posters[index]),
-                        fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DetailsScreen(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: AppColors.light,
+                        borderRadius: BorderRadius.all(Radius.circular(16.r)),
+                        image: DecorationImage(
+                          image: AssetImage(AppConstants.posters[index]),
+                          fit: BoxFit.cover,
+                        ),
                       ),
+                      width: 198.w,
+                      height: 247.h,
                     ),
-                    width: 198.w,
-                    height: 247.h,
                   ),
                   Positioned(
                     top: 12.h,
