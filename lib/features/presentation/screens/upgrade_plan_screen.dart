@@ -51,18 +51,21 @@ class _UpgradePlanScreenState extends State<UpgradePlanScreen> {
                         children: [
                           Text('Upgrade Plan', style: AppStyles.heaLineText),
                           SizedBox(width: 50.w),
-                          Container(
-                            width: 27.w,
-                            height: 27.w,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(50.r),
-                              color: Colors.white,
-                            ),
-                            child: Icon(
-                              Icons.close,
-                              size: 18.r,
-                              color: AppColors.darkBlue,
+                          InkWell(
+                            onTap: () => Navigator.pop(context),
+                            child: Container(
+                              width: 27.w,
+                              height: 27.w,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50.r),
+                                color: Colors.white,
+                              ),
+                              child: Icon(
+                                Icons.close,
+                                size: 18.r,
+                                color: AppColors.darkBlue,
+                              ),
                             ),
                           ),
                         ],
